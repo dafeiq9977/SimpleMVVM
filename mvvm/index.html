@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MVVM</title>
+<script defer src="build.js"></script></head>
+<body>
+
+<div id="app">
+    <h1>标题藏在对象深处： {{title[titleIndex.type]}} {-{title[titleIndex.type]}-}</h1>
+    <div>
+        <strong>请在下方输入行输入名字：</strong><br>
+        姓氏: {{name['last']}}<br>姓名:{{name.first}}
+    </div>
+    <div>您的姓氏： <input mvvm-model="name.last"><br>您的名字： <input mvvm-model="name.first"></div>
+    <div>
+        <strong>选择您家的交通工具：</strong><br>
+            <input type="checkbox" name="vehicle" value="自行车 " mvvm-model="vehicle['bicycle']">自行车<br>
+            <input type="checkbox" name="vehicle" value="汽车 " mvvm-model="vehicle['car']">汽车<br>
+            <input type="checkbox" name="vehicle" value="游艇 " mvvm-model="vehicle['yacht']">游艇<br>
+            <input type="checkbox" name="vehicle" value="飞机 " mvvm-model="vehicle['plane']">飞机<br>
+        您拥有：{{vehicle['bicycle']}}{{vehicle['car']}}{{vehicle['yacht']}}{{vehicle['plane']}}
+    </div>
+</div>
+<script src="build.js" charset="UTF-8" type="text/javascript"></script>
+</body>
